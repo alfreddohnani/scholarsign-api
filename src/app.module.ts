@@ -88,7 +88,7 @@ const productionCorsDomainsList = productionCorsDomains
         database: configService.get<string>('DB_NAME'),
         autoLoadEntities: true,
         synchronize: process.env.NODE_ENV !== 'production',
-        logging: false, //process.env.NODE_ENV !== 'production',
+        logging: process.env.NODE_ENV !== 'production',
         ssl:
           configService.get<string>('DB_SSL_MODE') === 'true'
             ? {
